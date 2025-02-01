@@ -14,6 +14,9 @@ export default {
         primary: "var(--primary)",
         border: "hsl(var(--border))",
       },
+      transitionTimingFunction: {
+        smooth: "cubic-bezier(0.4, 0, 0.2, 1)",
+      },
     },
     fontFamily: {
       sans: ["DM Sans", "sans-serif"],
