@@ -12,7 +12,12 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: "var(--primary)",
+        border: "hsl(var(--border))",
       },
+    },
+    fontFamily: {
+      sans: ["DM Sans", "sans-serif"],
+      fairyTail: ["FairyTail", "sans-serif"],
     },
   },
   plugins: [],

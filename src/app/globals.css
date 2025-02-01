@@ -2,10 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --primary: #17a16c;
+/* import woff from public folder 
+*/
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/Geist-Regular.woff") format("woff");
+}
+
+@layer base {
+  :root {
+    --border: 215 16% 47%; /* Example slate-500 color */
+    --background: #ffffff;
+    --foreground: #171717;
+    --primary: #17a16c;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,5 +29,5 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: DM Sans, Helvetica, sans-serif;
 }
