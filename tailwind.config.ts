@@ -17,6 +17,15 @@ export default {
       transitionTimingFunction: {
         smooth: "cubic-bezier(0.4, 0, 0.2, 1)",
       },
+      keyframes: {
+        "fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+      },
+      animation: {
+        "fade-in": "fade-in 1s ease-out forwards",
+      },
     },
     fontFamily: {
       sans: ["DM Sans", "sans-serif"],
