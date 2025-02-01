@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Lenis smooth scroll styles */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
 /* import woff from public folder 
 */
 @font-face {
@@ -35,14 +56,18 @@ body {
 @keyframes mask-reveal {
   from {
     transform: translateY(100%);
+    opacity: 0;
   }
   to {
     transform: translateY(0);
+    opacity: 1;
   }
 }
 
 .mask-animate {
-  animation: mask-reveal 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  animation-delay: 0.4s;
+  animation: mask-reveal 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: 0.2s;
+  transform: translateY(100%);
+  opacity: 0;
   mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
 }
