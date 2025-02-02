@@ -1,6 +1,6 @@
 import { useMousePosition } from "@/hooks/use-mouse-position";
 import { motion, useSpring } from "motion/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Star = ({
   baseTop,
@@ -34,14 +34,16 @@ const Star = ({
   const [position, setPosition] = useState({ top: baseTop, left: baseLeft });
   const [key, setKey] = useState(0);
 
-  if (mouse.x !== null && mouse.y !== null) {
-    const centerX = window.innerWidth / 2;
-    const centerY = window.innerHeight / 2;
-    const deltaX = (mouse.x - centerX) * intensity;
-    const deltaY = (mouse.y - centerY) * intensity;
-    x.set(deltaX);
-    y.set(deltaY);
-  }
+  useEffect(() => {
+    if (mouse.x !== null && mouse.y !== null && typeof window !== "undefined") {
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      const deltaX = (mouse.x - centerX) * intensity;
+      const deltaY = (mouse.y - centerY) * intensity;
+      x.set(deltaX);
+      y.set(deltaY);
+    }
+  }, [mouse.x, mouse.y, intensity, x, y]);
 
   const generateNewPosition = () => {
     const angle = Math.random() * Math.PI * 2;
