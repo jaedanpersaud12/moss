@@ -1,19 +1,12 @@
 "use client";
 
 import { Navbar } from "@/components/navigation/navbar";
-import { useInertiaScroll } from "@/hooks/use-inertia-scroll";
-import { Geist, Geist_Mono } from "next/font/google";
+import { StarBackground } from "@/components/ui/star-background";
+import { cn } from "@/lib/utils";
+import { Inter } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { useInertiaScroll } from "@/hooks/use-inertia-scroll";
+const inter = Inter({ subsets: ["latin"] });
 
 // export const metadata: Metadata = {
 //   title: "Create Next App",
@@ -22,17 +15,15 @@ const geistMono = Geist_Mono({
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
-  useInertiaScroll(); // Enable smooth scrolling
-
+}) {
+  useInertiaScroll();
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" className="dark">
+      <body className={cn(inter.className, "min-h-screen bg-background")}>
         <Navbar />
+        <StarBackground />
         {children}
       </body>
     </html>

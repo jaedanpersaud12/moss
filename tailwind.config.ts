@@ -13,6 +13,16 @@ export default {
         foreground: "var(--foreground)",
         primary: "var(--primary)",
         border: "hsl(var(--border))",
+        star: {
+          red: "var(--star-red)",
+          pink: "var(--star-pink)",
+          mint: "var(--star-mint)",
+          purple: "var(--star-purple)",
+          green: "var(--star-green)",
+          rose: "var(--star-rose)",
+          cyan: "var(--star-cyan)",
+          lavender: "var(--star-lavender)",
+        },
       },
       transitionTimingFunction: {
         smooth: "cubic-bezier(0.4, 0, 0.2, 1)",

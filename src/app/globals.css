@@ -36,6 +36,16 @@ html.lenis {
     --background: #ffffff;
     --foreground: #171717;
     --primary: #17a16c;
+
+    /* Star colors - Saturated for light mode */
+    --star-red: #ff4365;
+    --star-pink: #ff2e93;
+    --star-mint: #00e6b3;
+    --star-purple: #9d4edd;
+    --star-green: #2ecc71;
+    --star-rose: #ff0f7b;
+    --star-cyan: #00b4d8;
+    --star-lavender: #845ec2;
   }
 }
 
@@ -44,6 +54,16 @@ html.lenis {
     --background: #0a0a0a;
     --foreground: #ededed;
     --primary: #17a16c;
+
+    /* Star colors - Softer for dark mode */
+    --star-red: #ff9b9b;
+    --star-pink: #ffb5e8;
+    --star-mint: #aff8db;
+    --star-purple: #b28dff;
+    --star-green: #bffcc6;
+    --star-rose: #ffc9de;
+    --star-cyan: #c4faf8;
+    --star-lavender: #dbcdf0;
   }
 }
 
@@ -70,4 +90,10 @@ body {
   transform: translateY(100%);
   opacity: 0;
   mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+/* Add text masking styles */
+.mix-blend-difference {
+  mix-blend-mode: difference;
+  color: white; /* This will appear as black over light images due to difference blend mode */
 }

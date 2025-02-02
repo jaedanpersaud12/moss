@@ -7,11 +7,8 @@ interface NavLinkProps {
 
 export function NavLink({ href, children }: NavLinkProps) {
   return (
-    <Link
-      className="text-md font-bold relative group overflow-hidden"
-      href={href}
-    >
-      <span className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-primary after:transition-all after:duration-300 after:opacity-0 after:-translate-x-full group-hover:after:opacity-100 group-hover:after:translate-x-0">
+    <Link className="text-md font-bold relative group" href={href}>
+      <span className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2.5px] md:after:h-px after:bg-primary after:origin-right after:scale-x-0 after:transition-transform after:duration-300 after:ease-out group-hover:after:origin-left group-hover:after:scale-x-100">
         {children}
       </span>
     </Link>
